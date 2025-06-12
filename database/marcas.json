@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "marca004",
+    "nombre": "The Hive Streetwear",
+    "pais_origen": "Alemania",
+    "fundacion": 1998
+  },
+  {
+    "_id": "marca005",
+    "nombre": "Nemesis Gear",
+    "pais_origen": "Estados Unidos",
+    "fundacion": 2000
+  },
+  {
+    "_id": "marca006",
+    "nombre": "Raccoon Threads",
+    "pais_origen": "Reino Unido",
+    "fundacion": 2004
+  }
+]

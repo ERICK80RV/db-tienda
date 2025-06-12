@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "usr004",
+    "nombre": "Chris Redfield",
+    "correo": "chris.redfield@bsaa.org",
+    "telefono": "4444-2005",
+    "direccion": "BSAA Headquarters, Washington D.C."
+  },
+  {
+    "_id": "usr005",
+    "nombre": "Ada Wong",
+    "correo": "ada.wong@spy.net",
+    "telefono": "5555-2004",
+    "direccion": "Desconocida"
+  },
+  {
+    "_id": "usr006",
+    "nombre": "Ethan Winters",
+    "correo": "ethan.winters@resistance.org",
+    "telefono": "6666-2017",
+    "direccion": "Dulvey, Luisiana"
+  }
+]

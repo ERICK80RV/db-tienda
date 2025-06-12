@@ -1,149 +1,148 @@
-// db_tienda.js
+// db_ropa.js
 
-// Crear colecciones y datos en tienda_Ropa2025
-db = db.getSiblingDB('db_ropa');
+// Cambiar a base de datos
+db = db.getSiblingDB('proyectos-uca');
 
-// ----- COLECCIÓN: usuarios -----
+// ========== COLECCIÓN: usuarios ==========
 
-// Insertar un usuario
+// Inserción única
 db.usuarios.insertOne({
-  nombre: "Ana Catalina Brenes",
-  correo: "ana.brenes@example.com",
-  telefono: "8888-1111",
-  direccion: "San José, Costa Rica"
+  nombre: "Rebecca Chambers",
+  correo: "rebecca.chambers@starselite.com",
+  telefono: "7005-8899",
+  direccion: "Raccoon City"
 });
 
-// Insertar varios usuarios
+// Inserción múltiple
 db.usuarios.insertMany([
   {
-    nombre: "Luis Fernando Solís",
-    correo: "luis.solis@example.com",
-    telefono: "8888-2222",
-    direccion: "Cartago, Costa Rica"
+    nombre: "Claire Redfield",
+    correo: "claire.redfield@umbrella.com",
+    telefono: "7001-1122",
+    direccion: "Raccoon City"
   },
   {
-    nombre: "María José Vargas",
-    correo: "maria.vargas@example.com",
-    telefono: "8888-3333",
-    direccion: "Heredia, Costa Rica"
+    nombre: "Leon S. Kennedy",
+    correo: "leon.kennedy@rpd.com",
+    telefono: "7002-3344",
+    direccion: "Raccoon City"
   },
   {
-    nombre: "Carlos Jiménez",
-    correo: "carlos.jimenez@example.com",
-    telefono: "8888-4444",
-    direccion: "Alajuela, Costa Rica"
+    nombre: "Jill Valentine",
+    correo: "jill.valentine@bsaa.com",
+    telefono: "7003-5566",
+    direccion: "Raccoon City"
+  },
+  {
+    nombre: "Chris Redfield",
+    correo: "chris.redfield@bsaa.com",
+    telefono: "7004-7788",
+    direccion: "Raccoon City"
   }
 ]);
 
-// Actualizar usuario
-db.usuarios.updateOne(
-  { nombre: "Carlos Jiménez" },
-  { $set: { telefono: "8999-1234" } }
-);
+// ========== COLECCIÓN: marcas ==========
 
-// Eliminar usuario
-db.usuarios.deleteOne({ nombre: "Luis Fernando Solís" });
-
-
-// ----- COLECCIÓN: marcas -----
-
+// Inserción única
 db.marcas.insertOne({
-  nombre: "UrbanStyle",
-  pais: "Costa Rica"
+  nombre: "Stars Elite",
+  pais: "Canadá"
 });
 
+// Inserción múltiple
 db.marcas.insertMany([
-  { nombre: "EcoModa", pais: "Colombia" },
-  { nombre: "FashionWear", pais: "Estados Unidos" },
-  { nombre: "TrendyLine", pais: "España" }
+  { nombre: "Umbrella Fashion", pais: "Japón" },
+  { nombre: "RPD Gear", pais: "Estados Unidos" },
+  { nombre: "BSAA Outfitters", pais: "Reino Unido" },
+  { nombre: "Nemesis Wear", pais: "Rusia" }
 ]);
 
-db.marcas.updateOne(
-  { nombre: "EcoModa" },
-  { $set: { pais: "México" } }
-);
+// ========== COLECCIÓN: prendas ==========
 
-db.marcas.deleteOne({ nombre: "TrendyLine" });
-
-
-// ----- COLECCIÓN: prendas -----
-
+// Inserción única
 db.prendas.insertOne({
-  nombre: "Camiseta básica",
-  talla: "M",
-  color: "Blanca",
-  precio: 8500,
-  marca: "UrbanStyle"
+  nombre: "Gorra Stars Elite",
+  talla: "Única",
+  color: "Azul Oscuro",
+  precio: 9500,
+  stock: 20,
+  marca: "Stars Elite"
 });
 
+// Inserción múltiple
 db.prendas.insertMany([
   {
-    nombre: "Jeans ajustados",
+    nombre: "Chaqueta táctica RPD",
     talla: "L",
     color: "Azul",
-    precio: 14500,
-    marca: "FashionWear"
+    precio: 21000,
+    stock: 10,
+    marca: "RPD Gear"
   },
   {
-    nombre: "Vestido floreado",
+    nombre: "Parka de campo BSAA",
+    talla: "M",
+    color: "Verde",
+    precio: 26500,
+    stock: 8,
+    marca: "BSAA Outfitters"
+  },
+  {
+    nombre: "Abrigo Nemesis XL",
+    talla: "XL",
+    color: "Negro",
+    precio: 35000,
+    stock: 5,
+    marca: "Nemesis Wear"
+  },
+  {
+    nombre: "Uniforme Umbrella clásico",
     talla: "S",
     color: "Rojo",
-    precio: 18900,
-    marca: "EcoModa"
-  },
-  {
-    nombre: "Chaqueta de cuero",
-    talla: "M",
-    color: "Negra",
-    precio: 32000,
-    marca: "UrbanStyle"
+    precio: 18500,
+    stock: 15,
+    marca: "Umbrella Fashion"
   }
 ]);
 
-db.prendas.updateOne(
-  { nombre: "Jeans ajustados" },
-  { $set: { precio: 13900 } }
-);
+// ========== COLECCIÓN: ventas ==========
 
-db.prendas.deleteOne({ nombre: "Vestido floreado" });
-
-
-// ----- COLECCIÓN: ventas -----
-
+// Inserción única
 db.ventas.insertOne({
-  usuario: "Ana Catalina Brenes",
-  fecha: new Date("2025-06-08"),
+  usuario: "Rebecca Chambers",
+  fecha: new Date("2025-06-05T10:30:00Z"),
   prendas: [
-    { nombre: "Camiseta básica", cantidad: 2 },
-    { nombre: "Jeans ajustados", cantidad: 1 }
+    { nombre: "Gorra Stars Elite", cantidad: 1 }
   ],
-  total: 30500
+  total: 9500
 });
 
+// Inserción múltiple
 db.ventas.insertMany([
   {
-    usuario: "María José Vargas",
-    fecha: new Date("2025-06-09"),
+    usuario: "Claire Redfield",
+    fecha: new Date("2025-06-10T15:00:00Z"),
     prendas: [
-      { nombre: "Chaqueta de cuero", cantidad: 1 }
+      { nombre: "Uniforme Umbrella clásico", cantidad: 2 },
+      { nombre: "Chaqueta táctica RPD", cantidad: 1 }
     ],
-    total: 32000
+    total: 58000
   },
   {
-    usuario: "Carlos Jiménez",
-    fecha: new Date("2025-06-07"),
+    usuario: "Leon S. Kennedy",
+    fecha: new Date("2025-06-11T12:30:00Z"),
     prendas: [
-      { nombre: "Camiseta básica", cantidad: 1 },
-      { nombre: "Chaqueta de cuero", cantidad: 1 }
+      { nombre: "Parka de campo BSAA", cantidad: 1 }
     ],
-    total: 40500
+    total: 26500
+  },
+  {
+    usuario: "Jill Valentine",
+    fecha: new Date("2025-06-12T09:15:00Z"),
+    prendas: [
+      { nombre: "Abrigo Nemesis XL", cantidad: 1 },
+      { nombre: "Chaqueta táctica RPD", cantidad: 1 }
+    ],
+    total: 56000
   }
 ]);
-
-db.ventas.updateOne(
-  { usuario: "Carlos Jiménez" },
-  { $set: { total: 39500 } }
-);
-
-db.ventas.deleteOne({ usuario: "María José Vargas" });
-

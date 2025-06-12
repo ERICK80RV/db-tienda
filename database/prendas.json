@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "Gorra Stars Elite",
+    "talla": "Única",
+    "color": "Azul Oscuro",
+    "precio": 9500,
+    "stock": 20,
+    "marca": "Stars Elite"
+  },
+  {
+    "nombre": "Chaqueta táctica RPD",
+    "talla": "L",
+    "color": "Azul",
+    "precio": 21000,
+    "stock": 10,
+    "marca": "RPD Gear"
+  },
+  {
+    "nombre": "Parka de campo BSAA",
+    "talla": "M",
+    "color": "Verde",
+    "precio": 26500,
+    "stock": 8,
+    "marca": "BSAA Outfitters"
+  },
+  {
+    "nombre": "Abrigo Nemesis XL",
+    "talla": "XL",
+    "color": "Negro",
+    "precio": 35000,
+    "stock": 5,
+    "marca": "Nemesis Wear"
+  },
+  {
+    "nombre": "Uniforme Umbrella clásico",
+    "talla": "S",
+    "color": "Rojo",
+    "precio": 18500,
+    "stock": 15,
+    "marca": "Umbrella Fashion"
+  }
+]
