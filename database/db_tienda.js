@@ -1,148 +1,255 @@
-// db_ropa.js
+// db_tienda.js
 
-// Cambiar a base de datos
-db = db.getSiblingDB('proyectos-uca');
+// Conectarse a la base de datos 'proyecto-uca'
+db = db.getSiblingDB('proyecto-uca');
 
-// ========== COLECCIÓN: usuarios ==========
+// ---------------------- COLECCIÓN: usuarios ----------------------
 
-// Inserción única
+// Insertar un usuario
 db.usuarios.insertOne({
-  nombre: "Rebecca Chambers",
-  correo: "rebecca.chambers@starselite.com",
-  telefono: "7005-8899",
-  direccion: "Raccoon City"
+  nombre: "Valeria Montero",
+  correo: "valeria.montero@empresa.com",
+  telefono: "7000-1111",
+  direccion: "Limón, Costa Rica",
+  entidad: "Distribuidora Omega"
 });
 
-// Inserción múltiple
+// Insertar varios usuarios
 db.usuarios.insertMany([
   {
-    nombre: "Claire Redfield",
-    correo: "claire.redfield@umbrella.com",
-    telefono: "7001-1122",
-    direccion: "Raccoon City"
+    nombre: "Kevin Mora",
+    correo: "kevin.mora@empresa.com",
+    telefono: "7100-2222",
+    direccion: "Puntarenas, Costa Rica",
+    entidad: "Fashion Express"
   },
   {
-    nombre: "Leon S. Kennedy",
-    correo: "leon.kennedy@rpd.com",
-    telefono: "7002-3344",
-    direccion: "Raccoon City"
+    nombre: "Natalia Rojas",
+    correo: "natalia.rojas@empresa.com",
+    telefono: "7200-3333",
+    direccion: "Guanacaste, Costa Rica",
+    entidad: "Comercial Nova"
   },
   {
-    nombre: "Jill Valentine",
-    correo: "jill.valentine@bsaa.com",
-    telefono: "7003-5566",
-    direccion: "Raccoon City"
-  },
-  {
-    nombre: "Chris Redfield",
-    correo: "chris.redfield@bsaa.com",
-    telefono: "7004-7788",
-    direccion: "Raccoon City"
+    nombre: "Daniela Quirós",
+    correo: "daniela.quiros@empresa.com",
+    telefono: "7300-4444",
+    direccion: "Cartago, Costa Rica",
+    entidad: "Ropa Latina"
   }
 ]);
 
-// ========== COLECCIÓN: marcas ==========
+// Actualizar teléfono de un usuario
+db.usuarios.updateOne(
+  { nombre: "Kevin Mora" },
+  { $set: { telefono: "7100-0000" } }
+);
 
-// Inserción única
+// Eliminar un usuario
+db.usuarios.deleteOne({ nombre: "Daniela Quirós" });
+
+
+// ---------------------- COLECCIÓN: marcas ----------------------
+
+// Insertar una marca
 db.marcas.insertOne({
-  nombre: "Stars Elite",
-  pais: "Canadá"
+  nombre: "UrbanStyle",
+  pais: "Costa Rica"
 });
 
-// Inserción múltiple
+// Insertar varias marcas
 db.marcas.insertMany([
-  { nombre: "Umbrella Fashion", pais: "Japón" },
-  { nombre: "RPD Gear", pais: "Estados Unidos" },
-  { nombre: "BSAA Outfitters", pais: "Reino Unido" },
-  { nombre: "Nemesis Wear", pais: "Rusia" }
+  { nombre: "EcoModa", pais: "Colombia" },
+  { nombre: "FashionWear", pais: "Estados Unidos" },
+  { nombre: "TrendyLine", pais: "España" },
+  { nombre: "Ropa Latina", pais: "México" }
 ]);
 
-// ========== COLECCIÓN: prendas ==========
+// Actualizar país de una marca
+db.marcas.updateOne(
+  { nombre: "EcoModa" },
+  { $set: { pais: "Perú" } }
+);
 
-// Inserción única
+// Eliminar una marca
+db.marcas.deleteOne({ nombre: "TrendyLine" });
+
+
+// ---------------------- COLECCIÓN: prendas ----------------------
+
+// Insertar una prenda
 db.prendas.insertOne({
-  nombre: "Gorra Stars Elite",
-  talla: "Única",
-  color: "Azul Oscuro",
-  precio: 9500,
-  stock: 20,
-  marca: "Stars Elite"
+  nombre: "Camiseta básica",
+  talla: "M",
+  color: "Blanco",
+  precio: 8500,
+  stock: 10,
+  marca: "UrbanStyle"
 });
 
-// Inserción múltiple
+// Insertar varias prendas
 db.prendas.insertMany([
   {
-    nombre: "Chaqueta táctica RPD",
+    nombre: "Jeans ajustados",
     talla: "L",
     color: "Azul",
-    precio: 21000,
-    stock: 10,
-    marca: "RPD Gear"
-  },
-  {
-    nombre: "Parka de campo BSAA",
-    talla: "M",
-    color: "Verde",
-    precio: 26500,
+    precio: 14500,
     stock: 8,
-    marca: "BSAA Outfitters"
+    marca: "FashionWear"
   },
   {
-    nombre: "Abrigo Nemesis XL",
-    talla: "XL",
+    nombre: "Chaqueta de cuero",
+    talla: "M",
     color: "Negro",
-    precio: 35000,
+    precio: 32000,
     stock: 5,
-    marca: "Nemesis Wear"
+    marca: "UrbanStyle"
   },
   {
-    nombre: "Uniforme Umbrella clásico",
+    nombre: "Camiseta estampada",
     talla: "S",
-    color: "Rojo",
-    precio: 18500,
-    stock: 15,
-    marca: "Umbrella Fashion"
+    color: "Gris",
+    precio: 7000,
+    stock: 12,
+    marca: "Ropa Latina"
   }
 ]);
 
-// ========== COLECCIÓN: ventas ==========
+// Actualizar stock
+db.prendas.updateOne(
+  { nombre: "Camiseta básica" },
+  { $set: { stock: 9 } }
+);
 
-// Inserción única
+// Eliminar prenda
+db.prendas.deleteOne({ nombre: "Camiseta estampada" });
+
+
+// ---------------------- COLECCIÓN: ventas ----------------------
+
+// Insertar una venta
 db.ventas.insertOne({
-  usuario: "Rebecca Chambers",
-  fecha: new Date("2025-06-05T10:30:00Z"),
+  usuario: "Valeria Montero",
+  fecha: new Date("2025-06-08"),
   prendas: [
-    { nombre: "Gorra Stars Elite", cantidad: 1 }
+    { nombre: "Camiseta básica", cantidad: 2 },
+    { nombre: "Jeans ajustados", cantidad: 1 }
   ],
-  total: 9500
+  total: 30500
 });
 
-// Inserción múltiple
+// Insertar varias ventas
 db.ventas.insertMany([
   {
-    usuario: "Claire Redfield",
-    fecha: new Date("2025-06-10T15:00:00Z"),
+    usuario: "Kevin Mora",
+    fecha: new Date("2025-06-07"),
     prendas: [
-      { nombre: "Uniforme Umbrella clásico", cantidad: 2 },
-      { nombre: "Chaqueta táctica RPD", cantidad: 1 }
+      { nombre: "Camiseta básica", cantidad: 1 },
+      { nombre: "Chaqueta de cuero", cantidad: 1 }
     ],
-    total: 58000
+    total: 40500
   },
   {
-    usuario: "Leon S. Kennedy",
-    fecha: new Date("2025-06-11T12:30:00Z"),
+    usuario: "Natalia Rojas",
+    fecha: new Date("2025-06-06"),
     prendas: [
-      { nombre: "Parka de campo BSAA", cantidad: 1 }
+      { nombre: "Jeans ajustados", cantidad: 2 }
     ],
-    total: 26500
+    total: 29000
   },
   {
-    usuario: "Jill Valentine",
-    fecha: new Date("2025-06-12T09:15:00Z"),
+    usuario: "Carlos Jiménez",
+    fecha: new Date("2025-06-09"),
     prendas: [
-      { nombre: "Abrigo Nemesis XL", cantidad: 1 },
-      { nombre: "Chaqueta táctica RPD", cantidad: 1 }
+      { nombre: "Chaqueta de cuero", cantidad: 1 }
     ],
-    total: 56000
+    total: 32000
   }
+]);
+
+// Actualizar total de una venta
+db.ventas.updateOne(
+  { usuario: "Kevin Mora" },
+  { $set: { total: 39500 } }
+);
+
+// Eliminar venta
+db.ventas.deleteOne({ usuario: "Carlos Jiménez" });
+
+
+// ---------------------- CONSULTAS ----------------------
+
+// i. Obtener la cantidad vendida de prendas por fecha específica (2025-06-08)
+/* Esta consulta obtiene todas las prendas vendidas el 8 de junio del 2025 */
+db.ventas.aggregate([
+  { $match: { fecha: new Date("2025-06-08") } },
+  { $unwind: "$prendas" },
+  { $group: { _id: "$fecha", totalVendidas: { $sum: "$prendas.cantidad" } } }
+]);
+
+// ii. Obtener marcas con al menos una venta
+/* Esta consulta obtiene todas las marcas que tienen prendas asociadas a una venta */
+db.ventas.aggregate([
+  { $unwind: "$prendas" },
+  {
+    $lookup: {
+      from: "prendas",
+      localField: "prendas.nombre",
+      foreignField: "nombre",
+      as: "detalle_prenda"
+    }
+  },
+  { $unwind: "$detalle_prenda" },
+  { $group: { _id: "$detalle_prenda.marca" } }
+]);
+
+// iii. Obtener prendas vendidas y su stock restante
+/* Esta consulta obtiene cuántas unidades se vendieron por prenda y el stock restante */
+db.ventas.aggregate([
+  { $unwind: "$prendas" },
+  {
+    $group: {
+      _id: "$prendas.nombre",
+      totalVendidas: { $sum: "$prendas.cantidad" }
+    }
+  },
+  {
+    $lookup: {
+      from: "prendas",
+      localField: "_id",
+      foreignField: "nombre",
+      as: "prenda_info"
+    }
+  },
+  { $unwind: "$prenda_info" },
+  {
+    $project: {
+      prenda: "$_id",
+      totalVendidas: 1,
+      stockRestante: "$prenda_info.stock"
+    }
+  }
+]);
+
+// iv. Top 5 marcas más vendidas
+/* Esta consulta obtiene las 5 marcas con más ventas totales */
+db.ventas.aggregate([
+  { $unwind: "$prendas" },
+  {
+    $lookup: {
+      from: "prendas",
+      localField: "prendas.nombre",
+      foreignField: "nombre",
+      as: "info_prenda"
+    }
+  },
+  { $unwind: "$info_prenda" },
+  {
+    $group: {
+      _id: "$info_prenda.marca",
+      cantidadVendida: { $sum: "$prendas.cantidad" }
+    }
+  },
+  { $sort: { cantidadVendida: -1 } },
+  { $limit: 5 }
 ]);
