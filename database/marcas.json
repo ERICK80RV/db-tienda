@@ -1,20 +1,14 @@
 [
   {
-    "_id": "marca004",
-    "nombre": "The Hive Streetwear",
-    "pais_origen": "Alemania",
-    "fundacion": 1998
+    "nombre": "UrbanStyle",
+    "pais": "Costa Rica"
   },
   {
-    "_id": "marca005",
-    "nombre": "Nemesis Gear",
-    "pais_origen": "Estados Unidos",
-    "fundacion": 2000
+    "nombre": "EcoModa",
+    "pais": "México"
   },
   {
-    "_id": "marca006",
-    "nombre": "Raccoon Threads",
-    "pais_origen": "Reino Unido",
-    "fundacion": 2004
+    "nombre": "FashionWear",
+    "pais": "Estados Unidos"
   }
 ]

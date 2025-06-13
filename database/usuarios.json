@@ -1,23 +1,26 @@
 [
   {
-    "_id": "usr004",
-    "nombre": "Chris Redfield",
-    "correo": "chris.redfield@bsaa.org",
-    "telefono": "4444-2005",
-    "direccion": "BSAA Headquarters, Washington D.C."
+    "nombre": "Ana Catalina Brenes",
+    "correo": "ana.brenes@modacorp.com",
+    "telefono": "8888-1111",
+    "direccion": "San José, Costa Rica"
   },
   {
-    "_id": "usr005",
-    "nombre": "Ada Wong",
-    "correo": "ada.wong@spy.net",
-    "telefono": "5555-2004",
-    "direccion": "Desconocida"
+    "nombre": "Luis Fernando Solís",
+    "correo": "luis.solis@modacorp.com",
+    "telefono": "8888-2222",
+    "direccion": "Cartago, Costa Rica"
   },
   {
-    "_id": "usr006",
-    "nombre": "Ethan Winters",
-    "correo": "ethan.winters@resistance.org",
-    "telefono": "6666-2017",
-    "direccion": "Dulvey, Luisiana"
+    "nombre": "María José Vargas",
+    "correo": "maria.vargas@modacorp.com",
+    "telefono": "8888-3333",
+    "direccion": "Heredia, Costa Rica"
+  },
+  {
+    "nombre": "Carlos Jiménez",
+    "correo": "carlos.jimenez@modacorp.com",
+    "telefono": "8999-1234",
+    "direccion": "Alajuela, Costa Rica"
   }
 ]
